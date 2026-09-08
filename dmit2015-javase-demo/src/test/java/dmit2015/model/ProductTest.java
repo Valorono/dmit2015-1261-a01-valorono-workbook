@@ -12,7 +12,7 @@ class ProductTest {
     @Test
     void getName_whenProductCreated_shouldReturnCorrectName() {
         // Arrange
-        Product currentProduct = new Product("Laptop", 1200);
+        Product currentProduct = new Product("Laptop", 1200, 5);
         // Act
         String actualName = currentProduct.getName();
         // Assert
@@ -24,7 +24,7 @@ class ProductTest {
     @Test
     void getPrice_whenProductCreated_shouldReturnCorrectPrice() {
         // Arrange
-        Product currentProduct = new Product("Laptop", 1200);
+        Product currentProduct = new Product("Laptop", 1200, 5);
         // Act
         double actualPrice = currentProduct.getPrice();
         // Assert
@@ -36,7 +36,7 @@ class ProductTest {
     @Test
     void getPrice_whenProductCreated_shouldReturnCorrectPriceWithTax () {
         // Arrange
-        Product currentProduct = new Product("Laptop", 1200);
+        Product currentProduct = new Product("Laptop", 1200, 5);
         // Act
         double actualPrice = currentProduct.getPriceWithTax();
         // Assert
@@ -47,21 +47,21 @@ class ProductTest {
     @Test
     void constructor_whenNameIsNull_shouldThrowException () {
         assertThatThrownBy(() ->
-                new Product(null, 100)
+                new Product(null, 100, 5)
         ).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     void constructor_whenNameIsBlank_shouldThrowException () {
         assertThatThrownBy(() ->
-                new Product("", 100)
+                new Product("", 100, 5)
         ).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     void constructor_whenNameIsWhiteSpace_shouldThrowException () {
         assertThatThrownBy(() ->
-                new Product(" ", 100)
+                new Product(" ", 100, 5)
         ).isInstanceOf(IllegalArgumentException.class);
     }
 
@@ -77,6 +77,17 @@ class ProductTest {
         assertThatThrownBy(() ->
                 new Book("Invalid Price", -5)
         ).isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    void getInventoryValue_whenProductIsCreated_shouldReturnQuantity() {
+        // Arrange
+        Product currentProduct = new Product("Laptop", 1200, 5);
+        // Act
+        int actualInventoryValue = currentProduct.getInventoryValue();
+        // Assert
+        assertThat(actualInventoryValue)
+                .isEqualTo(6000);
     }
 
 
