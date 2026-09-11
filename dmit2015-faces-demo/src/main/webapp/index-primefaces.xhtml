@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="primefaces"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>DMIT2015 PrimeFaces Demo</title>
+</head>
+<body>
+    <h2>DMIT2015 PrimeFaces Demo</h2>
+<h:form>
+    <p:messages id="messages" />
+
+    <p:outputLabel for="@next" value="Your name:"/>
+    <p:inputText id="name" value="#{greetingBean.firstName}"/>
+    <p:commandButton value="Submit" update="messages"/>
+    <h:outputText id="greeting"
+                  value="#{greetingBean.greetingMessage}" />
+</h:form>
+
+<ui:fragment>
+
+</ui:fragment>
+</body>
+</html>
