@@ -8,6 +8,7 @@ import jakarta.inject.Named;
 public class GreetingBean {
 
     private String firstName;
+    private String lastName;
 
     public String getFirstName() {
         return firstName;
@@ -17,15 +18,23 @@ public class GreetingBean {
         this.firstName = firstName;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     public String getGreetingMessage() {
 
-        if (firstName == null || firstName.isBlank()) {
+        if (firstName == null || lastName == null || firstName.isBlank() || lastName.isBlank()) {
             return "";
         }
 
         //return "Welcome " + firstName + " to DMIT2015!";
 
-        return String.format("Welcome %s to DMIT2015!", firstName);
+        return String.format("Welcome %s %s to DMIT2015!", firstName, lastName);
         // string formatting is preferred in industry
     }
 }
