@@ -36,5 +36,6 @@ public class GreetingBean {
 
         return String.format("Welcome %s %s to DMIT2015!", firstName, lastName);
         // string formatting is preferred in industry
+        // Be prepared to explain how each input binding connects to its getter and setter.
     }
 }
