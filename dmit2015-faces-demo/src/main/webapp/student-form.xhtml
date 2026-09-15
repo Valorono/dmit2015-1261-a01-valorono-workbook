@@ -17,7 +17,7 @@
 
       <p:outputLabel for="fullName" value="Full Name" />
       <p:inputText id="fullName"
-                   value="#{studentFormBean.fullName}"
+                   value="#{studentFormBean.studentInfo.fullName}"
                    required="true"
                    requiredMessage="Full name is required." />
       <br /><br />
@@ -25,7 +25,7 @@
       <p:outputLabel for="program" value="Program" />
 
       <p:selectOneMenu id="program"
-                       value="#{studentFormBean.program}"
+                       value="#{studentFormBean.studentInfo.program}"
                        required="true"
                        requiredMessage="Program is required.">
           <f:selectItem itemLabel="Select Program"
@@ -40,7 +40,7 @@
       <br />
 
       <p:selectBooleanCheckbox id="fullTime"
-                               value="#{studentFormBean.fullTime}" />
+                               value="#{studentFormBean.studentInfo.fullTime}" />
       <p:outputLabel for="fullTime" value="Full Time Student" />
 
       <br />
@@ -54,6 +54,28 @@
 
       <h:outputText value="Successful submissions: #{studentFormBean.submissionCount}" />
     </p:panel>
+
+    <p:dataTable id="studentInfosDataTable"
+                 value="#{studentListSession.studentInfos}"
+                 var="currentStudent">
+        <p:column headerText="Student Name">
+            <h:outputText value="#{currentStudent.fullName}" />
+        </p:column>
+        <p:column headerText="Program">
+            <h:outputText value="#{currentStudent.program}" />
+        </p:column>
+        <p:column headerText="Full Time?">
+            <p:selectBooleanCheckbox value="#{currentStudent.fullTime}"
+                                     disabled="true" />
+            <!--true means user can't change value (designed not to be editable)-->
+        </p:column>
+        <p:column headerText="Action">
+            <p:commandButton value="remove"
+                             action="#{studentListSession.removeStudentInfo(currentStudent)}"
+                             process="@this"
+                             update="@studentInfosDataTable" />
+        </p:column>
+    </p:dataTable>
 
 </h:form>
 
