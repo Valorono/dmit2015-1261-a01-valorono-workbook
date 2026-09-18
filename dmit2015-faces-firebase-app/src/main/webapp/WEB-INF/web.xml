@@ -3,7 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_1.xsd"
          version="6.1">
-    
+
+    <!-- Define a list of default files to serve when a directory is requested. -->
     <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
@@ -19,11 +20,6 @@
         <param-name>jakarta.faces.AUTOMATIC_EXTENSIONLESS_MAPPING</param-name>
         <param-value>true</param-value>
     </context-param>
+
+    
 </web-app>
-
-
-
-<!-- validation fails: model not updated, action method doesn't execute
-faces-redirect=true -> redirect to page
-@NotBlank - only used for string values
-update="@form" - update on the backend; live update-->
