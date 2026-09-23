@@ -13,8 +13,6 @@ import org.omnifaces.util.Messages;
 import org.primefaces.PrimeFaces;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -26,7 +24,8 @@ import java.util.List;
 public class StudentCrudView implements Serializable {
 
     @Inject
-    @Named("memoryStudentService")
+//    @Named("memoryStudentService") // in-memory
+    @Named("firebaseHttpClientStudentService") // Firebase RTDB database
     private StudentService studentService;
 
     /**
@@ -137,7 +136,7 @@ public class StudentCrudView implements Serializable {
      */
     public void onDelete() {
         try {
-            // Get the unique name of the Json object to delete
+            // Get the unique name of the JSON object to delete
             selectedId = selectedStudent.getId();
             studentService.deleteStudentById(selectedId);
             Messages.addGlobalInfo("Delete was successful for id of {0}", selectedId);
