@@ -76,6 +76,4 @@ public class CourseRegistrationBean implements Serializable {
         this.courseName = null;
         this.onlineDelivery = false;
     }
-
-
 }
