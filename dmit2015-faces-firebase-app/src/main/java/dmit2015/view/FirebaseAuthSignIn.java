@@ -1,4 +1,4 @@
-package dmit2015.faces;
+package dmit2015.view;
 
 import dmit2015.model.FirebaseAuthSignInResponsePayload;
 import dmit2015.service.FirebaseAuthService;
@@ -43,7 +43,7 @@ public class FirebaseAuthSignIn implements Serializable {
     private String password;
 
     @Inject
-    private dmit2015.faces.FirebaseAuthSignInSession firebaseAuthSignInSession;
+    private dmit2015.view.FirebaseAuthSignInSession firebaseAuthSignInSession;
 
     @Inject
     @ConfigProperty(name = "firebase.web.api.key")

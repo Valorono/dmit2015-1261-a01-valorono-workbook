@@ -1,4 +1,4 @@
-package dmit2015.faces;
+package dmit2015.view;
 
 import dmit2015.model.FirebaseAuthSignInResponsePayload;
 import dmit2015.service.FirebaseAuthService;

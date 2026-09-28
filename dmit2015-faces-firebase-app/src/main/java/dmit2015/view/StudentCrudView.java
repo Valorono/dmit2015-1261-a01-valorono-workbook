@@ -25,7 +25,7 @@ public class StudentCrudView implements Serializable {
 
     @Inject
 //    @Named("memoryStudentService") // in-memory
-    @Named("firebaseHttpClientStudentService") // Firebase RTDB database
+    @Named("firebaseMultiTenantHttpClientStudentService") // Firebase RTDB database
     private StudentService studentService;
 
     /**
