@@ -5,7 +5,7 @@
 # idToken is used to authenticate later Firebase Realtime Database requests.
 # The response handler saves both values as global HTTP Client variables.
 
-@firebaseApiKey = AIzaSyDVhq_MqnbJvCwEUHwf-wG584N_OQxel9s
+@firebaseApiKey = // can be copied from Firebase
 
 POST https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={{firebaseApiKey}}
 Content-Type: application/json
