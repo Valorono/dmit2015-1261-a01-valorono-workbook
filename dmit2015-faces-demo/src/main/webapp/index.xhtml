@@ -1,47 +1,50 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:p="primefaces">
+<html
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="primefaces"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>DMIT2015 Jakarta Faces Demos (Lessons 4-6)</title>
+</h:head>
 
-    <h:head>
-        <title>DMIT2015 JSF Demo</title>
-    </h:head>
+<div class="card">
+    <p:tabMenu activeIndex="#{param.i}">
+        <p:menuitem value="Home Page" outcome="index" icon="pi pi-fw pi-home">
+            <f:param name="i" value="0"/>
+        </p:menuitem>
+        <p:menuitem value="Simple JSF Demo" outcome="jsfdemo" icon="pi pi-fw pi-pencil">
+            <f:param name="i" value="0"/>
+        </p:menuitem>
+        <p:menuitem value="PrimeFaces Demo" outcome="index-primefaces" icon="pi pi-fw pi-file">
+            <f:param name="i" value="0"/>
+        </p:menuitem>
+        <p:menuitem value="Student Registration" outcome="student-form" icon="pi pi-fw pi-file">
+            <f:param name="i" value="0"/>
+        </p:menuitem>
+        <p:menuitem value="Student List" outcome="student-list" icon="pi pi-fw pi-file">
+            <f:param name="i" value="0"/>
+        </p:menuitem>
+        <p:menuitem value="Course Registration" outcome="course-registration" icon="pi pi-fw pi-file">
+            <f:param name="i" value="0"/>
+        </p:menuitem>
+        <p:menuitem value="Course Enrollment" outcome="course-enrollment" icon="pi pi-fw pi-file">
+            <f:param name="i" value="0"/>
+        </p:menuitem>
+        <p:menuitem value="Enrollment Confirmation" outcome="enrollment-confirmation" icon="pi pi-fw pi-file">
+            <f:param name="i" value="0"/>
+        </p:menuitem>
+    </p:tabMenu>
+</div>
 
-    <h:body>
-        <h2>Welcome to DMIT2015!</h2>
-        <h:form>
-            <h:messages />
+<h:body>
 
-            <p:inputText
-                value="#{greetingBean.firstName}"
-                placeholder="Enter your first name." />
+    <h2>DMIT2015 Jakarta Faces Demos Collection</h2>
 
-            <br />
-            <br />
+    <br/>
 
-            <p:inputText
-                value="#{greetingBean.lastName}"
-                placeholder="Enter your last name." />
+    <p>Student Name: Kyle Pananganan</p>
 
-            <br />
-            <br />
-
-            <h:commandButton
-                value="Submit"
-                update="@form"/>
-
-            <br/>
-            <br/>
-
-            <h:outputText
-                value="#{greetingBean.greetingMessage}"/>
-
-            <br/>
-            <br/>
-
-            <h:outputText value="Apache Tomcat + Jakarta Faces" />
-
-        </h:form>
-    </h:body>
+</h:body>
 </html>

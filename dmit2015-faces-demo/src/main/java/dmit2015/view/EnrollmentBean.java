@@ -59,4 +59,12 @@ public class EnrollmentBean implements Serializable {
     public void setOnlineDelivery(boolean onlineDelivery) {
         this.onlineDelivery = onlineDelivery;
     }
+
+    // clears the form
+    public void clearForm() {
+        this.studentName = null;
+        this.emailAddress = null;
+        this.programName = null;
+        this.onlineDelivery = false;
+    }
 }
