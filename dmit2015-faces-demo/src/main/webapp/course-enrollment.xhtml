@@ -3,16 +3,19 @@
       xmlns:h="jakarta.faces.html"
       xmlns:f="jakarta.faces.core"
       xmlns="http://www.w3.org/1999/xhtml">
-<head>
+
+<h:head>
     <title>Course Enrollment</title>
-</head>
+</h:head>
 
 <h:body>
 
-<h2>DMIT2015 Course Enrollment</h2>
+    <h2>DMIT2015 Course Enrollment</h2>
 
 <h:form>
-    <p:messages />
+
+    <p:messages id="messages" />
+
     <p:panel header="Enrollment Form">
         <!--Student Name-->
         <p:outputLabel for="studentName"
@@ -55,7 +58,7 @@
 
         </p:selectOneMenu>
 
-        <br></br>
+        <br/><br/>
 
         <!--Delivery Mode-->
 
@@ -70,7 +73,8 @@
 
         <p:commandButton
                 value="Submit Enrollment"
-                action="#{enrollmentBean.submit}" />
+                action="#{enrollmentBean.submit}"
+                update="@form"/>
     </p:panel>
 
 </h:form>

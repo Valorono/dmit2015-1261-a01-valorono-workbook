@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:p="primefaces"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns="http://www.w3.org/1999/xhtml">
+<h:head>
+    <title>Enrollment Confirmation</title>
+</h:head>
+<h:body>
+
+    <h2>Enrollment Successful</h2>
+
+    <p:panel header="Summary">
+
+        <p>Student:
+            <h:outputText value=" #{enrollmentBean.studentName}" />
+        </p>
+
+        <p>Program:
+            <h:outputText value=" #{enrollmentBean.programName}" />
+        </p>
+
+        <p>Delivery Mode:
+            <h:outputText value=" #{enrollmentBean.deliveryMode}" />
+        </p>
+
+        <br/><br/>
+
+        <p:button value="Back To Course Enrollment"
+                  outcome="course-enrollment"/>
+
+    </p:panel>
+
+</h:body>
+</html>

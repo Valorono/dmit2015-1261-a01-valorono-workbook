@@ -22,7 +22,6 @@ public class EnrollmentBean implements Serializable {
         if (onlineDelivery) {
             return "Online";
         }
-
         return "In-Person";
     }
 
