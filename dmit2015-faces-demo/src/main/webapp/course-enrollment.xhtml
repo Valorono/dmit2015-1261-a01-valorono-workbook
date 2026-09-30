@@ -28,6 +28,17 @@
 
         <br/><br />
 
+        <!--Student Email-->
+        <p:outputLabel for="emailAddress"
+                       value="Email:" />
+        <br />
+        <p:inputText id="emailAddress"
+                     value="#{enrollmentBean.emailAddress}"
+                     required="true"
+                     requiredMessage="Email is required" />
+
+        <br/><br />
+
         <!--Program Dropdown-->
 
         <p:outputLabel for="programName"

@@ -10,6 +10,7 @@ import java.io.Serializable;
 public class EnrollmentBean implements Serializable {
 
     private String studentName;
+    private String emailAddress;
     private String programName;
     private boolean onlineDelivery;
 
@@ -33,6 +34,14 @@ public class EnrollmentBean implements Serializable {
 
     public void setStudentName(String studentName) {
         this.studentName = studentName;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 
     public String getProgramName() {
