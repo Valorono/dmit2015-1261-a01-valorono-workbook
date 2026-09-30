@@ -1,4 +1,4 @@
-package dmit2015.faces;
+package dmit2015.view;
 
 import org.omnifaces.util.Faces;
 
